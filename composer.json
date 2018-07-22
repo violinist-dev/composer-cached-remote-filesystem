@@ -1,0 +1,13 @@
+{
+    "name": "violinist-dev/composer-cached-remote-filesystem",
+    "description": "Wrap the remote filesystem with a cache",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eirik S. Morland",
+            "email": "eirik@morland.no"
+        }
+    ],
+    "require": {}
+}
