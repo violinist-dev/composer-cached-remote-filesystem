@@ -9,10 +9,18 @@
             "email": "eirik@morland.no"
         }
     ],
+    "autoload": {
+      "psr-4": {
+        "Violinist\\CachedRemoteFilesystem\\": "src"
+      }
+    },
     "require": {
       "composer-plugin-api": "^1.1"
     },
     "extra": {
       "class": "Violinist\\CachedRemoteFilesystem"
+    },
+    "require-dev": {
+        "composer/composer": "dev-master"
     }
 }
