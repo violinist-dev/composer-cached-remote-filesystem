@@ -23,13 +23,15 @@ class EventSubscriber implements PluginInterface, EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            PluginEvents::PRE_FILE_DOWNLOAD => 'onPreFileDownload',
+            PluginEvents::PRE_FILE_DOWNLOAD => ['onPreFileDownload', -10],
         ];
     }
 
     public function onPreFileDownload(PreFileDownloadEvent $event)
     {
-        $this->io->write('ON pre download');
+        $rfs = $event->getRemoteFilesystem();
+        $crfs = new CachedRemoteFileSystem($rfs, $this->io);
+        $event->setRemoteFilesystem($crfs);
     }
 
     /**
