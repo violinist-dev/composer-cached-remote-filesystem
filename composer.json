@@ -15,7 +15,8 @@
       }
     },
     "require": {
-      "composer-plugin-api": "^1.1"
+      "composer-plugin-api": "^1.1",
+        "symfony/cache": "^3.4"
     },
     "extra": {
       "class": "Violinist\\CachedRemoteFilesystem\\EventSubscriber"
