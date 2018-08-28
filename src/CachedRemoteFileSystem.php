@@ -72,7 +72,7 @@ class CachedRemoteFileSystem extends RemoteFilesystem
       $ttl = (15 * 60);
       $cache = new FilesystemCache();
       if ($cache->has($cid)) {
-        $this->outerIo->write('Forcing disk cache for URL ' . $fileUrl, TRUE, IOInterface::DEBUG);
+        $this->outerIo->writeError('Forcing disk cache for URL ' . $fileUrl, TRUE, IOInterface::DEBUG);
         return $cache->get($cid);
       }
       $data = $this->originalFileSystem->getContents($originUrl, $fileUrl, $progress, $options);
