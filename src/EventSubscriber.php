@@ -29,9 +29,15 @@ class EventSubscriber implements PluginInterface, EventSubscriberInterface
 
     public function onPreFileDownload(PreFileDownloadEvent $event)
     {
-        $rfs = $event->getRemoteFilesystem();
-        $crfs = new CachedRemoteFileSystem($rfs, $this->io);
-        $event->setRemoteFilesystem($crfs);
+        try {
+            // Composer version 1, yes this is what we are using there.
+            $rfs = $event->getRemoteFilesystem();
+            $crfs = new CachedRemoteFileSystem($rfs, $this->io);
+            $event->setRemoteFilesystem($crfs);
+        }
+        catch (\Throwable $e) {
+            // Totally fine. We can do this differently on composer 2.
+        }
     }
 
     /**
@@ -41,5 +47,15 @@ class EventSubscriber implements PluginInterface, EventSubscriberInterface
     {
         $this->composer = $composer;
         $this->io = $io;
+    }
+
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+        // We do not need to do anything.
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
+        // We do not need to do anything.
     }
 }

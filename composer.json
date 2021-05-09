@@ -1,27 +1,27 @@
 {
-    "name": "violinist-dev/composer-cached-remote-filesystem",
-    "description": "Wrap the remote filesystem with a cache",
-    "type": "composer-plugin",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Eirik S. Morland",
-            "email": "eirik@morland.no"
-        }
-    ],
-    "autoload": {
-      "psr-4": {
-        "Violinist\\CachedRemoteFilesystem\\": "src"
-      }
-    },
-    "require": {
-      "composer-plugin-api": "^1.1",
-        "symfony/cache": "^3.4"
-    },
-    "extra": {
-      "class": "Violinist\\CachedRemoteFilesystem\\EventSubscriber"
-    },
-    "require-dev": {
-        "composer/composer": "dev-master"
+  "name": "violinist-dev/composer-cached-remote-filesystem",
+  "description": "Wrap the remote filesystem with a cache",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eirik S. Morland",
+      "email": "eirik@morland.no"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Violinist\\CachedRemoteFilesystem\\": "src"
+    }
+  },
+  "require": {
+    "composer-plugin-api": "^1.1 || ^2",
+    "symfony/cache": "^3.4"
+  },
+  "extra": {
+    "class": "Violinist\\CachedRemoteFilesystem\\EventSubscriber"
+  },
+  "require-dev": {
+    "composer/composer": "dev-master"
+  }
 }
