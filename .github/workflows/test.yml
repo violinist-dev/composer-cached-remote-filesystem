@@ -35,9 +35,10 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
 
-      - name: Dump composer verson
+      - name: Select composer version 
         run: |
-          composer require --dev composer/composer
+          composer self-update --${{ matrix.composer-version }}
+          composer require --dev composer/composer:^${{ matrix.composer-version }}
           composer --version
 
       - name: Validate composer.json
