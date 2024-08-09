@@ -1,4 +1,5 @@
 parameters:
     level: 2
     excludePaths:
-      - sec/CachedRemoteFileSystem.php           
+      - src/CachedRemoteFileSystem.php
+      - src/EventSubscriber.php
