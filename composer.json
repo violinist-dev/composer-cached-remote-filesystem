@@ -14,7 +14,7 @@
       "Violinist\\CachedRemoteFilesystem\\": "src"
     }
   },
-  "script": {
+  "scripts": {
     "test": "composer phpstan",
     "phpstan": "phpstan analyse src"
   },
