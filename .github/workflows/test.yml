@@ -18,6 +18,9 @@ jobs:
           - "8.1"
           - "8.2"
           - "8.3"
+        composer-version:
+          - "1"
+          - "2"
     steps:
       - name: Dump matrix context
         env:
@@ -33,7 +36,9 @@ jobs:
           php-version: ${{ matrix.php-versions }}
 
       - name: Dump composer verson
-        run: composer --version
+        run: |
+          composer require --dev composer/composer
+          composer --version
 
       - name: Validate composer.json
         run: composer --verbose validate
