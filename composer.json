@@ -17,7 +17,7 @@
   "script": {
     "test": "composer phpstan",
     "phpstan": "phpstan analyse src"
-  }
+  },
   "require": {
     "composer-plugin-api": "^1.1 || ^2",
     "phpstan/phpstan": "^1.0",
