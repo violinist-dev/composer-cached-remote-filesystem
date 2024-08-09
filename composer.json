@@ -20,8 +20,5 @@
   },
   "extra": {
     "class": "Violinist\\CachedRemoteFilesystem\\EventSubscriber"
-  },
-  "require-dev": {
-    "composer/composer": "dev-master"
   }
 }
