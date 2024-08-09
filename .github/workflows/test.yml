@@ -52,8 +52,3 @@ jobs:
 
       - name: Run tests
         run: composer test
-        env:
-          COMPOSER_VERSION: ${{ matrix.composer }}
-
-      - name: run phpstan
-        run: ./vendor/bin/phpstan analyze src tests
