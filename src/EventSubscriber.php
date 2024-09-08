@@ -17,6 +17,8 @@ class EventSubscriber implements PluginInterface, EventSubscriberInterface
      */
     protected $io;
 
+    protected $composer;
+
     /**
      * {@inheritdoc}
      */
