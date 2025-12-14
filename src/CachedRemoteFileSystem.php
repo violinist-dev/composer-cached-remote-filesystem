@@ -4,7 +4,7 @@ namespace Violinist\CachedRemoteFilesystem;
 
 use Composer\IO\IOInterface;
 use Composer\Util\RemoteFilesystem;
-use Symfony\Component\Cache\Simple\FilesystemCache;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
 class CachedRemoteFileSystem extends RemoteFilesystem
 {
@@ -75,7 +75,7 @@ class CachedRemoteFileSystem extends RemoteFilesystem
       $cid = sha1(json_encode(func_get_args()));
       // Cache for 15 minutes.
       $ttl = (15 * 60);
-      $cache = new FilesystemCache();
+      $cache = new FilesystemAdapter();
       if ($cache->has($cid)) {
         $this->outerIo->writeError('Forcing disk cache for URL ' . $fileUrl, TRUE, IOInterface::DEBUG);
         $data = $cache->get($cid);
